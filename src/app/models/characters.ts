@@ -1,6 +1,7 @@
 import { Url } from "url";
 
 export interface Characters{
+    filter(arg0: (d: any) => void): unknown;
     id:string;
     name:string;
 
@@ -23,7 +24,9 @@ export interface Characters{
     actor:string;
     alternate_actors:[];
     alive:boolean;
-    image:string
+    image:string;
+    matches:string;
+    title:string;
 
 
 }
