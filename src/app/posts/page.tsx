@@ -20,8 +20,7 @@ export default async function Posts() {
       <h1>Posts</h1>
       <ul>
         {posts.map((post) => (
-           <Link href={"/posts/"+post.id}>{post.name}</Link>
-      
+          <Link href={"/posts/" + post.id}>{post.name}</Link>
         ))}
       </ul>
     </div>
