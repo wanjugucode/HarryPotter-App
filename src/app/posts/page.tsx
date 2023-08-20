@@ -1,10 +1,10 @@
-import { Post } from "@/lib/types";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { Characters } from "../models/characters";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const getPost = async (id: string): Promise<Post> => {
+const getPost = async (id: string): Promise<Characters> => {
   const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   const post = await data.json();
 
@@ -21,9 +21,10 @@ export default async function PostPage({
   const post = await getPost(postId);
   return (
     <div className={inter.className}>
-     <Link href={`/pages/${post.id}`}></Link>  <h1>{post.title}</h1>
+     <Link href={`/pages/${post.id}`}></Link>
+       <h1>{}</h1>
       <p>Post ID: {postId}</p>
-      <p>{post.body}</p>
+      <p>{}</p>
     </div>
   );
 }
