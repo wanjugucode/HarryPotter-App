@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Characters } from "./models/characters";
+import { Characters } from "../models/characters";
 import Link from "next/link";
 import "tailwindcss/tailwind.css";
 import Styles from "../styles/styles.module.css";
