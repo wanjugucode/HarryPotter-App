@@ -1,6 +1,6 @@
 import { Characters } from "src/app/models/characters";
 import "tailwindcss/tailwind.css";
-
+import Styles from "../../styles/styles.module.css";
 const getPost = async (id: string): Promise<Characters> => {
   const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   const character = await data.json();
@@ -17,38 +17,33 @@ export default async function PostPage({
 }) {
   const character = await getPost(postId);
   return (
-    <div>
-      <p className="flex justify-center items-center mt-4">ID: {postId}</p>
 
-      <div className="max-w-3xl mx-auto my-3 p-4 mt-20">
-        <div className="w-full lg:w-5/6 mx-auto flex flex-col lg:flex-row justify-center items-center border rounded-lg shadow-lg bg-white p-8 ">
-          <div className="lg:w-auto w-full bg-cover rounded-t lg:rounded-l text-center overflow-hidden lg:flex lg:flex-col justify-center items-center lg:w-1/3 p-4">
-            <img
-              src={character.image}
-              alt=""
-              className="mx-auto w-96 h-96 lg:w-auto lg:h-auto"
-            />
+    <div className={`grid ${Styles.customGrid} mt-16`}>
+      <p className=" flex justify-center items-center">Character Id:{postId}</p>
+      <div className="center-content-tablet center-content-mobile flex justify-center items-center"> {/* Center on tablet and mobile */}
+        <div className="w-70 max-w-lg rounded overflow-hidden shadow-lg">
+          <div className="relative">
+            <img className="w-full max-h-40 object-cover" src="/img/card-top.jpg" alt={character.name}/>
+            <div className="absolute inset-0 bg-opacity-50 bg-black"></div>
           </div>
-
-          <div className="lg:w-2/3 w-full rounded-b lg:rounded-r p-4 lg:flex lg:flex-col justify-center items-center">
-            <div className="mb-4 justify-center items-center">
-              <div className="text-gray-900 font-bold text-xl mb-1">
-                {character.name}
-              </div>
-              <table className="table-auto border mt-1">
-                <tbody>
+          <div className="px-6 py-4">
+          <table className="mt-4 w-full border">
+          <thead>
+<h1>{character.name}</h1>
+          </thead>
+          <tbody  >
                   <tr className="border w-[600px]">
                     <td className="border px-2 py-2 text-left">House </td>
                     <td className="border px-2 py-2 text-left">
-                      {character.house}
+                      {character.house}  
                     </td>
                   </tr>
                   <tr className="border w-[600px]">
                     <td className="border px-2 py-2 text-left">
-                      Date Of Birth
+                      Date Of Birth 
                     </td>
                     <td className="border px-2 py-2 text-left">
-                      {character.dateOfBirth}
+                      {character.dateOfBirth}  
                     </td>
                   </tr>
                   <tr className="border w-[600px]">
@@ -76,11 +71,12 @@ export default async function PostPage({
                     </td>
                   </tr>
                 </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        </table>
+         </div>
+
       </div>
     </div>
-  );
+    </div>
+  
+    )
 }
