@@ -47,11 +47,9 @@ export default function FetchAllCharacters() {
 
   return (
     <div className={`grid ${Styles.customGrid} ${Styles.container}`}>
- <div className="flex justify-center items-center h-full mx-auto max-w-screen-md center-content-tablet center-content-mobile"> 
-
-    
-
- <div className={`relative ${
+      <div className="pt-2 relative mx-auto text-gray-600 flex flex-col items-center justify-center pb-8">
+        <div
+          className={`relative ${
             inputFocused ? "border-black" : "border-gray-300"
           } mb-4`}
         >
@@ -92,8 +90,8 @@ export default function FetchAllCharacters() {
           {filteredCharacters.map((character) => (
             <div
               key={character.id}
-              className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 md:px-4 lg:px-6 xl:px-8 mb-4"
-              >
+              className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 md:px-4 lg:px-6 mb-4"
+            >
               <div
                 className={`w-full max-w-sm rounded overflow-hidden border border-gray-300 shadow-lg ${Styles.autoHeightCard} ${Styles.centeredCard}`}
               >
@@ -113,7 +111,7 @@ export default function FetchAllCharacters() {
                       />
                     ) : (
                       <img
-                      className="w-full h-79"
+                        className="w-full h-80"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtYqXjw6IR_opev4UADLjT8TPcLmWYQsx_YQ&usqp=CAU"
                         alt="Avatar"
                       />
@@ -122,7 +120,7 @@ export default function FetchAllCharacters() {
 
                   <div className="px-6 py-4 text-center">
                     <div className="text-black font-bold text-xl mb-2">
-                      <h4>{character.name} </h4>
+                      <h4>{character.name}</h4>
                     </div>
 
                     <p className="text-black text-base">
