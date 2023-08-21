@@ -111,7 +111,7 @@ export default function FetchAllCharacters() {
                       />
                     ) : (
                       <img
-                        className="w-full h-80"
+                        className="w-full h-79"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtYqXjw6IR_opev4UADLjT8TPcLmWYQsx_YQ&usqp=CAU"
                         alt="Avatar"
                       />
