@@ -1,6 +1,97 @@
-.main{
-    min-height: 100vh;
-    display: grid;
-    place-content: centre;
-    background-color: #333;
+.main {
+  min-height: 100vh;
+  display: grid;
+  place-content: centre;
+  background-color: #333;
+}
+
+.border-gray-300 {
+  border-color: #ccc;
+}
+.text-gray-600 {
+  color: #666;
+}
+.text-black {
+  color: #000;
+}
+@media (max-width: 640px) {
+  .border-2 {
+    border-width: 1px;
+  }
+  .text-sm {
+    font-size: 14px;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-cols-1 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+ 
+  }
+  .tableCentered{
+    display: block;
+    margin: 0 auto;
+  }
+ 
+}
+
+@media (min-width: 1025px) {
+  .grid-cols-1 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+    .center-content-tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+  }
+}
+
+.autoHeightCard {
+  height: auto;
+  display: flex;
+}
+.centeredContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+ 
+}
+
+.centeredCard {
+  margin: 2rem;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  border: 2px solid white;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.centeredCard:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.centeredImage {
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  border: 2px solid white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
