@@ -3,6 +3,7 @@ import React, {  useState, useEffect } from 'react';
 import { Characters } from './models/characters';
 import Link from 'next/link';
 import 'tailwindcss/tailwind.css';
+import Styles from './styles/styles.module.css'
 
 export default function FetchAllCharacters() {
   const [searchName, setSearchName] = useState('');
@@ -34,7 +35,7 @@ export default function FetchAllCharacters() {
   });
 
   return (
-    <div>
+    <div className={`grid ${Styles.customGrid} ${Styles.container}`}>
 <div className="pt-2 relative mx-auto text-gray-600 flex flex-col items-center justify-center pb-8">
         {/* Search by Name or House */}
         <div className={`relative ${inputFocused ? 'border-black' : 'border-gray-300'} mb-4`}>
@@ -73,9 +74,9 @@ export default function FetchAllCharacters() {
         key={character.id}
         className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 md:px-4 lg:px-6 mb-4"
       >
-        <div className="max-w-sm rounded overflow-hidden border border-gray-300 shadow-lg">
+      <div className={ `w-full max-w-sm rounded overflow-hidden border border-gray-300 shadow-lg ${Styles.autoHeightCard} ${Styles.centeredCard}`}>
           <Link href={`/detailpage/${character.id}`}>
-            <div className="h-56 md:h-64 lg:h-72 xl:h-96 flex items-center justify-center">
+          <div className={`h-56 sm:h-64 md:h-72 lg:h-80 ${Styles.centeredImage}`}>
             {character.image ? (
                     <img
                       className="w-full h-96"
