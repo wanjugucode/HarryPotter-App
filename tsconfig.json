@@ -1,14 +1,21 @@
 {
+
+
+
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "../tests-out",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -19,9 +26,23 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
-    }
+     
+    "@myhelper/*": ["packages/myhelper/*"]},
+    
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tests/get.spec.ts"],
+  "exclude": ["node_modules"],
+
 }
+
+
+// src/
+//     source.ts
+
+// tests/
+//     tsconfig.json  # test-specific tsconfig
+//     example.spec.ts
+
+// tsconfig.json  # generic tsconfig for all typescript sources
+
+// playwright.config.ts
