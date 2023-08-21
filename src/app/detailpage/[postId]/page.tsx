@@ -23,7 +23,7 @@ export default async function PostPage({
       <div className="center-content-tablet center-content-mobile flex justify-center items-center"> {/* Center on tablet and mobile */}
         <div className="w-70 max-w-lg rounded overflow-hidden shadow-lg">
           <div className="relative">
-            <img className="w-full max-h-40 object-cover" src="/img/card-top.jpg" alt={character.name}/>
+    
             <div className="absolute inset-0 bg-opacity-50 bg-black"></div>
           </div>
           <div className="px-6 py-4">
@@ -43,7 +43,7 @@ export default async function PostPage({
                       Date Of Birth 
                     </td>
                     <td className="border px-2 py-2 text-left">
-                      {character.dateOfBirth}  
+                      {character.dateOfBirth}     Date Of Birth    Date Of Birth 
                     </td>
                   </tr>
                   <tr className="border w-[600px]">
